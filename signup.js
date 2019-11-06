@@ -33,13 +33,8 @@ $("#signupbtn").click(function(){
             email: email,
             password:password
         },
-        success: function(data) {
-            if(data!==success)
-            {
-                window.location.href = "login.html";
-            }
-            // console.log("Success");
-            
+        success: function (data) {
+            window.location.href = "login.html";
         },
         error:function(err){
             console.log("fail")
