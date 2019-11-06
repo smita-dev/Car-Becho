@@ -20,10 +20,10 @@ $("#signupbtn").click(function(){
     {
         alert("Please fill in all fields");
     }
-    // if(password.length<6)
-    // {
-    //     alert('Password should be at least 6 characters');
-    // }
+    if(password.length<6)
+    {
+        alert('Password should be at least 6 characters');
+    }
 
     $.ajax({
         type: "POST",
@@ -33,9 +33,13 @@ $("#signupbtn").click(function(){
             email: email,
             password:password
         },
-        success: function() {
+        success: function(data) {
+            if(data!==success)
+            {
+                window.location.href = "login.html";
+            }
             // console.log("Success");
-            window.location.href = "login.html";
+            
         },
         error:function(err){
             console.log("fail")
