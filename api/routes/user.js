@@ -2,6 +2,7 @@ const express=require('express');
 const router=express.Router();
 const mongoose=require('mongoose');
 const User=require('../models/usermodel');
+const bcrypt=require('bcryptjs');
 
 router.post('/signup',(req,res,next)=>{
      //  const product ={
@@ -21,7 +22,15 @@ router.post('/signup',(req,res,next)=>{
             });
 
             console.log(user);
-        
+            
+            //hash password
+            bcrypt.genSalt(10,(err,salt)=>
+            bcrypt.hash(user.password, salt,(err,hash)=>{
+                if(err) throw err;
+
+                //set password to hashed
+                user.password=hash;
+
                 //save user
                 user.save()
                 .then(user=>{
@@ -29,7 +38,7 @@ router.post('/signup',(req,res,next)=>{
                 })
                 .catch(err=>console.log(err));
             
-            
+            }))
         }
     })
         
