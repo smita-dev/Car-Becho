@@ -13,12 +13,12 @@ app.use(bodyparser.urlencoded({extended:false}));
 app.use(bodyparser.json());
 
 const userRoutes=require('./api/routes/user')
-const carRoutes=require('./api/routes/car')
+//const carRoutes=require('./api/routes/car')
 
 
 //filter routes
 app.use('/api',userRoutes);
-app.use('/car',carRoutes);
+//app.use('/car',carRoutes);
 
 //connected to db
 mongoose.connect("mongodb+srv://dbUser:"+process.env.MONGO_ATLAS_PW+
