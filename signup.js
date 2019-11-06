@@ -24,4 +24,21 @@ $("#signupbtn").click(function(){
     {
         alert('Password should be at least 6 characters');
     }
+
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "http://localhost:5000/api/signup",
+        data:{
+            email: email,
+            password:password
+        },
+        success: function(g) {
+            console.log("Success");
+
+        },
+        error:function(err){
+            console.log("fail")
+        }
+    })
 })
