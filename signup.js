@@ -41,3 +41,25 @@ $("#signupbtn").click(function(){
         }
     })
 })
+
+
+$("#loginbtn").click(function(){
+    email=$(".email").val();
+    password=$(".password").val();
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "http://localhost:5000/api/login",
+        data:{
+            email: email,
+            password:password
+        },
+        success: function (data) {
+            // window.location.href = "login.html";
+            console.log("success");
+        },
+        error:function(err){
+            console.log("fail")
+        }
+    })
+})
