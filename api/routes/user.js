@@ -39,11 +39,9 @@ router.post('/signup',(req,res,next)=>{
                 .catch(err=>console.log(err));
             
             }))
+           
         }
-    })
-        
-    res.status(201).json({
-        message:"Signup",
+        console.log("sdfsad");
     })
 })
 module.exports=router;

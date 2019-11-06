@@ -1,10 +1,15 @@
 const express=require('express');
 const app=express();
+
+//to keep logging details
+const morgan=require('morgan');
 const bodyparser=require('body-parser');
 const cors=require('cors');
 const mongoose=require('mongoose');
-const port=process.env.PORT || 3000;
+// const expressLayouts=require('express-ejs-layouts');
 
+//port number
+const port=process.env.PORT || 3000;
 //cors
 app.use(cors());
 
@@ -21,10 +26,11 @@ app.use('/api',userRoutes);
 //app.use('/car',carRoutes);
 
 //connected to db
-mongoose.connect("mongodb+srv://dbUser:"+process.env.MONGO_ATLAS_PW+
-"@cluster0-uz0v7.mongodb.net/CarApp?retryWrites=true&w=majority",
+mongoose.connect("mongodb+srv://dbUser:q9twDpjE06O9oTxd@cluster0-uz0v7.mongodb.net/CarApp?retryWrites=true&w=majority",
 {
-    useUnifiedTopology:true,useNewUrlParser:true
+    useUnifiedTopology:true,
+    useNewUrlParser:true,
+    useCreateIndex: true,
 })
 .then(()=>console.log("connected to mongodb"))
 .catch(err => console.log('Error occured while connecting MongoDB '+err));
