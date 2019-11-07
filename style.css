@@ -1,5 +1,10 @@
-#inner-screen{
-    margin-top: 100px;
+.inner-screen{
+    margin-left: 500px;
+    /* opacity: 0.6; */
+}
+.window{
+    background-color: rgb(243, 189, 119);
+    opacity: 0.7;
 }
 body{
     height: 100vh;
