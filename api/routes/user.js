@@ -3,10 +3,11 @@ const router=express.Router();
 const mongoose=require('mongoose');
 const User=require('../models/usermodel');
 const bcrypt=require('bcryptjs');
+const jsonwt = require('jsonwebtoken');
 const passport=require('passport');
 const LoacalStrategy=require('passport-local').Strategy;
-const session = require('express-session')
-const flash=require('connect-flash')
+// const session = require('express-session')
+// const flash=require('connect-flash')
 //signup handle
 router.post('/signup',(req,res,next)=>{
      //  const product ={
@@ -16,7 +17,7 @@ router.post('/signup',(req,res,next)=>{
     const {email,password}=req.body;
     User.findOne({email:email}).then(user=>{
         if(user){
-            res.send("error");
+            res.send("This email is already exist");
         }
         else
         {
@@ -62,64 +63,41 @@ router.post('/signup',(req,res,next)=>{
 router.post('/login',(req,res)=>{
     console.log("gfjh")
     const {email,password}=req.body;
-    // User.findOne({email:email})
-    //          .then(user => {
-    //             //  if(!user)
-    //             //     return res.status(404).send({
-    //             //         "Error" : "User with the given name does not exists"
-    //             //     });
-                
-    //             bcrypt.compare(password,user.password)
-    //                         .then(correct =>{
-    //                             if(correct){
-    //                                 const payload = {
-    //                                     id : user.id,
-    //                                     username : user.username,
-    //                                     email: user.email
-    //                                 }
-
-    //                                 jsonwt.sign(
-    //                                     payload,
-    //                                     key,{
-    //                                         expiresIn:10800
-    //                                     },(err,token) => {
-    //                                         if(err) throw err;
-    //                                         res.json({
-    //                                             success : true,
-    //                                             token : "Bearer "+ token
-    //                                         })
-    //                                     }
-
-    //                                 )
-    //                             }
-    //                             else{
-    //                                 res.status(401).json({failed:'Invalid user credentials'});
-    //                             }
-    //                         })
-    //                         .catch(err => console.log("error generating token "+err));
-    //          })
-
     User.findOne({email:email})
-            .then(user=>{
-                if(!user){
-                    // return done(null,false,{message:"This email is not registered"});
-                    res.status(201).json({failed:"This email is not registered"});
-                }
+             .then(user => {
+                //  if(!user)
+                //     return res.status(404).send({
+                //         "Error" : "User with the given name does not exists"
+                //     });
+                
+                bcrypt.compare(password,password)
+                            .then(correct =>{
+                                if(correct){
+                                    const payload = {
+                                        id : _id,
+                                        email:email,
+                                    }
 
-                //match password
-                bcrypt.compare(password,password,(err,isMatch)=>{
-                    if(err)throw err;
+                                    jsonwt.sign(
+                                        payload,
+                                        key,{
+                                            expiresIn:10800
+                                        },(err,token) => {
+                                            if(err) throw err;
+                                            res.json({
+                                                success : true,
+                                               
+                                            })
+                                        }
 
-                    if(isMatch){
-                        res.status(201).json({failed:'success'});
-                    }
-                    else
-                    {
-                        res.status(201).json({failed:'password incorrect'});
-                    }
-                })
-            })
-            .catch(err=>console.log(err));
+                                    )
+                                }
+                                else{
+                                    res.status(401).json({failed:'Invalid user credentials'});
+                                }
+                            })
+                            .catch(err => console.log("error generating token "+err));
+             })
 
             console.log("gdgf")
 })
