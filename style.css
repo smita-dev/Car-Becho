@@ -1,10 +1,9 @@
-.inner-screen{
+/* .inner-screen{
     margin-left: 500px;
     /* opacity: 0.6; */
-}
 .window{
-    background-color: rgb(231, 190, 137);
-    opacity: 0.7;
+    background-color: rgb(231, 227, 222);
+    opacity: 0.8;
 }
 body{
     height: 100vh;
@@ -13,13 +12,13 @@ body{
     background-size: cover; 
     background-position: center center;
 }
-.screen{
+/* .screen{
     height: 100vh;
     background-image: url('car1.jpg'); 
     background-repeat: no-repeat; 
     background-size: cover; 
     background-position: center center;
-}
+} */
 .headline{
     color: white;
     font-size: 20px;
