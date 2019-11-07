@@ -13,6 +13,10 @@ body{
     background-size: cover; 
     background-position: center center;
 }
-#name{
+.headline{
     color: white;
+    font-size: 2rem;
+}
+.logo{
+    height: 50px;
 }
