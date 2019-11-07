@@ -48,8 +48,9 @@ app.use(bodyparser.json());
 
 
   //passport middleware
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(passport.initialize());
+
+
 
 const userRoutes=require('./api/routes/user')
 //const carRoutes=require('./api/routes/car')
