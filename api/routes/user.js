@@ -41,7 +41,7 @@ router.post('/signup',(req,res,next)=>{
                 .then(user=>{
                     // res.status(200).send("success");
                     // req.flash('success_msg','you are now registered');
-                    res.redirect('../login')
+                    res.status("201").send("success");
                 })
                 .catch(err=>console.log(err));
             }))
@@ -70,30 +70,14 @@ router.post('/login',(req,res)=>{
                 //         "Error" : "User with the given name does not exists"
                 //     });
                 
-                bcrypt.compare(password,password)
+                bcrypt.compare(password,user.password)
                             .then(correct =>{
+                                console.log(correct)
                                 if(correct){
-                                    const payload = {
-                                        id : _id,
-                                        email:email,
-                                    }
-
-                                    jsonwt.sign(
-                                        payload,
-                                        key,{
-                                            expiresIn:10800
-                                        },(err,token) => {
-                                            if(err) throw err;
-                                            res.json({
-                                                success : true,
-                                               
-                                            })
-                                        }
-
-                                    )
+                                  res.json({"success":"Login successfull"})
                                 }
                                 else{
-                                    res.status(401).json({failed:'Invalid user credentials'});
+                                    res.status(404).json({failed:'Invalid user credentials'});
                                 }
                             })
                             .catch(err => console.log("error generating token "+err));
