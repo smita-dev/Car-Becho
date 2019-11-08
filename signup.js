@@ -34,6 +34,7 @@ $("#signupbtn").click(function(){
             password:password
         },
         success: function (){
+            console.log("ajax call done successfully")
             window.location.href = "/home.html";
         },
         error:function(err){
@@ -46,6 +47,8 @@ $("#signupbtn").click(function(){
 $("#loginbtn").click(function(){
     email=$(".email").val();
     password=$(".password").val();
+    console.log(email)
+    console.log(password)
     $.ajax({
         type: "POST",
         dataType: "json",
@@ -54,9 +57,10 @@ $("#loginbtn").click(function(){
             email: email,
             password:password
         },
-        success: function (data) {
+        success: function () {
             // window.location.href = "login.html";
-            console.log("success");
+            console.log("ajax call done successfully")
+            window.location.href = "home.html";
         },
         error:function(err){
             console.log("fail")

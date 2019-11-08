@@ -4,8 +4,6 @@ const mongoose=require('mongoose');
 const User=require('../models/usermodel');
 const bcrypt=require('bcryptjs');
 const jsonwt = require('jsonwebtoken');
-const passport=require('passport');
-const LoacalStrategy=require('passport-local').Strategy;
 // const session = require('express-session')
 // const flash=require('connect-flash')
 //signup handle
@@ -50,31 +48,20 @@ router.post('/signup',(req,res,next)=>{
         console.log("sdfsad");
     })
 })
-// router.post('/login',(req,res,next)=>{
-//     console.log("sahk")
-//     passport.authenticate('local',{
-//          successRedirect: '/homepage',
-//          failureRedirect: '/user/login',
-//          failureFlash: true 
-//     })(req,res,next)
 
-// })
 
 router.post('/login',(req,res)=>{
     console.log("gfjh")
     const {email,password}=req.body;
     User.findOne({email:email})
-             .then(user => {
-                //  if(!user)
-                //     return res.status(404).send({
-                //         "Error" : "User with the given name does not exists"
-                //     });
-                
+             .then(user => {       
                 bcrypt.compare(password,user.password)
                             .then(correct =>{
                                 console.log(correct)
                                 if(correct){
-                                  res.json({"success":"Login successfull"})
+                                    res.status("201").json({
+                                        success : true
+                                    })
                                 }
                                 else{
                                     res.status(404).json({failed:'Invalid user credentials'});
@@ -83,7 +70,7 @@ router.post('/login',(req,res)=>{
                             .catch(err => console.log("error generating token "+err));
              })
 
-            console.log("gdgf")
+            console.log("gdgf");
 })
 
 
