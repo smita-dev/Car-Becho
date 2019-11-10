@@ -53,12 +53,12 @@ app.use(passport.initialize());
 
 
 const userRoutes=require('./api/routes/user')
-//const carRoutes=require('./api/routes/car')
+const carRoutes=require('./api/routes/car')
 
 
 //filter routes
 app.use('/api',userRoutes);
-//app.use('/car',carRoutes);
+app.use('/car',carRoutes);
 
 //connected to db
 mongoose.connect("mongodb+srv://dbUser:q9twDpjE06O9oTxd@cluster0-uz0v7.mongodb.net/CarApp?retryWrites=true&w=majority",
