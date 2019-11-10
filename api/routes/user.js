@@ -3,9 +3,8 @@ const router=express.Router();
 const mongoose=require('mongoose');
 const User=require('../models/usermodel');
 const bcrypt=require('bcryptjs');
-const jsonwt = require('jsonwebtoken');
-// const session = require('express-session')
-// const flash=require('connect-flash')
+
+
 //signup handle
 router.post('/signup',(req,res,next)=>{
      //  const product ={
@@ -72,7 +71,6 @@ router.post('/login',(req,res)=>{
 
             console.log("gdgf");
 })
-
 
 
 module.exports=router;
