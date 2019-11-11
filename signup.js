@@ -59,8 +59,8 @@ $("#loginbtn").click(function(){
         },
         success: function () {
             // window.location.href = "login.html";
-            console.log("ajax call done successfully")
-            window.location.href = "home.html";
+            console.log("ajax call done successfully");
+            window.location.href = "signup.html";
         },
         error:function(err){
             console.log("fail")
