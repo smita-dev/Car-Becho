@@ -6,19 +6,19 @@
     opacity: 0.8;
 }
 body{
-    height: 100vh;
+    /* height: 100vh; */
     background-image: url('car-wallpaper.jpg'); 
     background-repeat: no-repeat; 
     background-size: cover; 
     background-position: center center;
 }
-/* .screen{
+.screen{
     height: 100vh;
     background-image: url('car1.jpg'); 
     background-repeat: no-repeat; 
     background-size: cover; 
     background-position: center center;
-} */
+}
 .headline{
     color: white;
     font-size: 20px;

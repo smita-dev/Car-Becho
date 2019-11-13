@@ -30,7 +30,7 @@
         </nav>
 
         <div class="implementation ">
-          <h1 class="m-5 headline">Price Estimater</h1>
+          <h1 class="mt-5 ml-5 headline">Price Estimater</h1>
           <Div class="row m-4">
             <div class="col-"></div>
             <div class="col-6">
@@ -51,33 +51,31 @@
                   </datalist>
                 </div>
                 <div class="carinfo">
-                  <label class="font-weight-bold text-white mt-3">Km Driven :</label>
-                  <input class="mr-2 form-control" type="text" id="kmdriven" list="KmDrviven-datalist" placeholder="Enter Km Driven">
-                  <datalist id="kmDriven-datalist">
-
-                  </datalist>
-                </div>
+                    <label class="font-weight-bold text-white mt-3">Km Driven :</label>
+                    <input class="mr-2 form-control"  type="text" id="kmDriven" list="kmDriven-datalist" placeholder="Enter Car Name">
+                        <datalist id="kmDriven-datalist">
+                          <option value="less than 50000">
+                          <option value="50000-100000">
+                          <option value="more than 100000">
+                      </datalist>
+                </div> 
                 
-                <!-- <div class="carinfo">
-                <label class="font-weight-bold">Issurance :</label>
-                <input class="mr-2 form-control" onchange="getFilter()" type="text" id="carname" list="car-datalist" placeholder="Enter Car Name">
-                    <datalist id="browsers">
-                      <option value="Internet Explorer">
-                      <option value="Firefox">
-                      <option value="Chrome">
-                      <option value="Opera">
-                      <option value="Safari">
-                    </datalist>
-                </div>
                 <div class="carinfo">
-                <label class="font-weight-bold">No. Of Owners :</label>
-                <input class="mr-2 form-control" onchange="getFilter()" type="text" id="carname" list="car-datalist" placeholder="Enter Car Name">
-                    <datalist id="browsers">
-                      <option value="Internet Explorer">
-                      <option value="Firefox">
-                      <option value="Chrome">
-                      <option value="Opera">
-                      <option value="Safari">
+                <label class="font-weight-bold text-white mt-3">Issurance :</label>
+                <input class="mr-2 form-control" type="text" id="inssurance" list="Inssurance-datalist" placeholder="Enter Car Name">
+                    <datalist id="Inssurance-datalist">
+                      <option value="Yes">
+                      <option value="No">
+                    </datalist>
+                </div> 
+
+                <div class="carinfo">
+                <label class="font-weight-bold text-white mt-3">No. Of Owners :</label>
+                <input class="mr-2 form-control" type="text" id="owner" list="owner-datalist" placeholder="Enter No. of owner">
+                    <datalist id="owner-datalist">
+                      <option value="First Owner">
+                      <option value="Second Owner">
+                      <option value="More than two owner">
                     </datalist>
                 </div> -->
                     <button type="button" class="btn btn-light mt-4 submitbtn">Check Value</button>
