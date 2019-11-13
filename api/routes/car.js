@@ -26,18 +26,28 @@ router.post('/modelname',(req,res)=>{
 
 router.post('/year',(req,res)=>{
     console.log(req.body);
-    Usedcardetail.find({
-        brand:req.body.brand,
-        model:req.body.model,
-        yearOfRegistration:req.body.year
-    }).then(data=>{
-        if(data)
-        {
-            console.log(data);
-            res.json(data);
+
+    Usedcardetail.aggregate([{
+        $match: {
+            brand: req.body.brand,
+            // model: req.body.model,
+            yearOfRegistration: req.body.year,
         }
-           
-        // return res.status(404).json("Error");
+    },
+    {
+        $group: {
+            _id: null,
+            priceAvg: {
+                $avg: "$price"
+            }
+        }
+    }
+    ], function (err, result) {
+        if (err) {
+            res.status(500).send("Error loading from database" + err);
+        } else {
+            res.status(200).send(result);
+        }
+    });
     })
-})
 module.exports=router;
