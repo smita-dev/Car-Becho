@@ -35,10 +35,10 @@ $("#signupbtn").click(function(){
         },
         success: function (){
             console.log("ajax call done successfully")
-            window.location.href = "login.html";
+            window.location.href = "home.html";
         },
         error:function(err){
-            window.location.href = "/signup.html";
+            window.location.href = "signup.html";
         }
     })
 })
@@ -64,7 +64,7 @@ $("#loginbtn").click(function(){
         },
         error:function(err){
             console.log("fail")
-            window.location.href = "home.html";
+            window.location.href = "login.html";
         }
     })
 })
