@@ -1,6 +1,6 @@
 {
     "env":{
         "PORT":5000,
-        ".MONGO_ATLAS_PW":"q9twDpjE06O9oTxd"
+        "MONGO_ATLAS_PW":"q9twDpjE06O9oTxd"
     }
 }
