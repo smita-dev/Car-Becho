@@ -1,5 +1,11 @@
-window.addEventListener("load", init);
+let seletedBrand;
 let result;
+let selectedModel;
+let seletedKmDriven;
+let inssurance=true;
+let noOfOwner;
+window.addEventListener("load", init);
+
 
 function init()
 {
@@ -31,14 +37,14 @@ function init()
 }
 
 $("#companyname").change(function(){
-    let brand=document.getElementById("companyname").value;
-    console.log(brand);
+    seletedBrand=document.getElementById("companyname").value;
+    console.log(seletedBrand);
     $.ajax({
         type:"POST",
         dataType:"json",
         url:"http://localhost:5000/car/modelname",
         data:{
-            brand:brand
+            brand:seletedBrand
         },
         success:function(data)
         {
@@ -65,3 +71,15 @@ function displaymodel(model)
     })
 
 }
+
+$(".evaluate-btn").click(function(){
+    selectedModel=document.getElementById("modelname").value;
+    seletedKmDriven=document.getElementById("kmDriven").value;
+    inssurance=document.getElementById("inssurance").value;
+    noOfOwner=document.getElementById("owner").value;
+    console.log(seletedBrand)
+    console.log(selectedModel);
+    console.log(seletedKmDriven);
+    console.log(inssurance);
+    console.log(noOfOwner);
+})
