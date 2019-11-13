@@ -29,7 +29,7 @@ app.use('/api',userRoutes);
 app.use('/car',carRoutes);
 
 //connected to db
-mongoose.connect("mongodb+srv://dbUser:q9twDpjE06O9oTxd@cluster0-uz0v7.mongodb.net/CarApp?retryWrites=true&w=majority",
+mongoose.connect("mongodb+srv://dbUser:q9twDpjE06O9oTxd@cluster0-uz0v7.mongodb.net/Car?retryWrites=true&w=majority",
 {
     useUnifiedTopology:true,
     useNewUrlParser:true,
@@ -42,5 +42,4 @@ mongoose.connect("mongodb+srv://dbUser:q9twDpjE06O9oTxd@cluster0-uz0v7.mongodb.n
 app.listen(port,()=>{
     console.log("connected on port "+port)
 })
-
 module.exports=app;
