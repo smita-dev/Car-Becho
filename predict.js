@@ -31,5 +31,37 @@ function init()
 }
 
 $("#companyname").change(function(){
-   
+    let brand=document.getElementById("companyname").value;
+    console.log(brand);
+    $.ajax({
+        type:"POST",
+        dataType:"json",
+        url:"http://localhost:5000/car/modelname",
+        data:{
+            brand:brand
+        },
+        success:function(data)
+        {
+           displaymodel(data);
+        },
+        error:function(err){
+            console.log(err);
+        }
+    })
 })
+function displaymodel(model)
+{
+    console.log(model);
+    let distinctModel=[...new Set(model.map(v=>v.model))];
+    console.log(distinctModel);
+    let modelList = document.getElementById("model-datalist");
+    distinctModel.forEach(model=>{
+        if(model===""){
+        }else{
+            let optionModel=document.createElement('option');
+            optionModel.value=model;
+            modelList.appendChild(optionModel);
+        }
+    })
+
+}
