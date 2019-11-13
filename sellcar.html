@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Car-Becho</title>
+</head>
+<body>
+        <nav class="navbar justify-content-between nav navbar navbar-light" style="background-color: #0a0a0a;">
+                <a class="font-weight-bold">
+                    <img src="logo.png" class="logo">
+                   <span class="headline">CAR BECHO</span>
+                </a>
+
+                <ul class="nav justify-content-end">
+                  
+                        <li class="nav-item">
+                          <a class="nav-link active" href="login.html"><span style="color: white;">Home</span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" href="sellcar.html"><span style="color: white;">Buy</span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="home.html"><span style="color: white;">Estimate</span></a>
+                        </li>
+                </ul>
+        </nav>
+
+        <div class="implementation ">
+          <h1 class="mt-5 ml-5 ">Sell your car in click</h1>
+          <Div class="row m-4">
+            <div class="col-4"></div>
+            <div class="col-4">
+              <form action="/">
+                <div class="carinfo">
+                    <label class="font-weight-bold text-white mt-3">Company :</label>
+                    <input class="mr-2 form-control" type="text" id="companyname" list="car-datalist" placeholder="Enter Company Name">
+                    <datalist id="car-datalist">
+                        
+                    </datalist>
+                </div>
+                
+                <div class="carinfo">
+                  <label class="font-weight-bold text-white mt-3">Model Name :</label>
+                  <input class="mr-2 form-control" type="text" id="modelname" list="model-datalist" placeholder="Enter Model Name">
+                  <datalist id="model-datalist">
+                     
+                  </datalist>
+                </div>
+                <div class="carinfo">
+                    <label class="font-weight-bold text-white mt-3">Year Of Registration :</label>
+                    <input class="mr-2 form-control" type="text" id="yearOfReg" list="yearOfReg-datalist" placeholder="No. of owner">
+                        <datalist id="yearOfReg-datalist">
+                          <!-- <option value="First Owner">
+                          <option value="Second Owner">
+                          <option value="More than two owner"> -->
+                        </datalist>
+                </div>
+                <div class="carinfo">
+                    <label class="font-weight-bold text-white mt-3">Km Driven :</label>
+                    <input class="mr-2 form-control"  type="text" id="kmDriven" list="kmDriven-datalist" placeholder="Enter Km Driven">
+                        <datalist id="kmDriven-datalist">
+                          <option  value="less than 50000" kmval="50000">
+                          <option value="50000-100000"  kmval="100000">
+                          <option value="more than 100000"  kmval="200000">
+                      </datalist>
+                </div> 
+                <div class="carinfo">
+                    <label class="font-weight-bold text-white mt-3">No. of owner :</label>
+                    <input class="mr-2 form-control" type="text" id="owner" list="owner-datalist" placeholder="No. of owner">
+                        <datalist id="owner-datalist">
+                          <option value="First Owner">
+                          <option value="Second Owner">
+                          <option value="More than two owner">
+                        </datalist>
+                </div>
+
+                    <button type="button" class="btn btn-light mt-4 evaluate-btn">Check Value</button>
+              </form>
+            </div>
+            <div class="col-4"></div>
+          </Div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
