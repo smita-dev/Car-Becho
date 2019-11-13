@@ -14,6 +14,7 @@ router.get('/carname',(req,res) => {
               })
               .catch(err => console.log("error occured while finding shops list from  collection "+err));
 })
+
 router.post('/modelname',(req,res)=>{
     console.log(req.body.brand);
     Usedcardetail.find({brand:req.body.brand}).

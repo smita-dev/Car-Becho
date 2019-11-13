@@ -64,6 +64,7 @@ $("#loginbtn").click(function(){
         },
         error:function(err){
             console.log("fail")
+            window.location.href = "home.html";
         }
     })
 })

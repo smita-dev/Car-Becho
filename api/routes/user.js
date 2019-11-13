@@ -7,10 +7,7 @@ const bcrypt=require('bcryptjs');
 
 //signup handle
 router.post('/signup',(req,res,next)=>{
-     //  const product ={
-    //     email:req.body.email,
-    //     password:req.body.password
-    // }
+
     const {email,password}=req.body;
     User.findOne({email:email}).then(user=>{
         if(user){
@@ -28,7 +25,9 @@ router.post('/signup',(req,res,next)=>{
             //hash password
             bcrypt.genSalt(10,(err,salt)=>
             bcrypt.hash(user.password, salt,(err,hash)=>{
-                if(err) throw err;
+                if(err){
+                    throw err;
+                } 
 
                 //set password to hashed
                 user.password=hash;
@@ -38,7 +37,7 @@ router.post('/signup',(req,res,next)=>{
                 .then(user=>{
                     // res.status(200).send("success");
                     // req.flash('success_msg','you are now registered');
-                    res.status("201").send("success");
+                    res.status("201").json({"success":"success"});
                 })
                 .catch(err=>console.log(err));
             }))
