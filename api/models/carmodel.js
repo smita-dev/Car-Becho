@@ -1,16 +1,14 @@
 const mongoose=require('mongoose');
 
-const carSchema= new mongoose.Schema({
+const usedcardetail= new mongoose.Schema({
 
-    car:{
-       type: String,
-    //    required:true
-    },
-    price:{
-        type:Number,
-        // required:true,
-        // minlength:8
-    }
+    brand: String,
+    yearOfRegistration: Number,
+    kilometer: {type: Number, default: 0},
+    model:String,
+    price: Number,
+
 });
+usedcardetail.set('collection','usedcardetail')
 
-module.exports=mongoose.model('Car',carSchema);
+module.exports=mongoose.model('usedcardetail',usedcardetail);
