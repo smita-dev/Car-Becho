@@ -51,33 +51,43 @@
                   </datalist>
                 </div>
                 <div class="carinfo">
+                    <label class="font-weight-bold text-white mt-3">Year Of Registration :</label>
+                    <input class="mr-2 form-control" type="text" id="yearOfReg" list="yearOfReg-datalist" placeholder="No. of owner">
+                        <datalist id="yearOfReg-datalist">
+                          <!-- <option value="First Owner">
+                          <option value="Second Owner">
+                          <option value="More than two owner"> -->
+                        </datalist>
+                </div>
+                <div class="carinfo">
                     <label class="font-weight-bold text-white mt-3">Km Driven :</label>
-                    <input class="mr-2 form-control"  type="text" id="kmDriven" list="kmDriven-datalist" placeholder="Enter Car Name">
+                    <input class="mr-2 form-control"  type="text" id="kmDriven" list="kmDriven-datalist" placeholder="Enter Km Driven">
                         <datalist id="kmDriven-datalist">
-                          <option value="less than 50000">
-                          <option value="50000-100000">
-                          <option value="more than 100000">
+                          <option  value="less than 50000" kmval="50000">
+                          <option value="50000-100000"  kmval="100000">
+                          <option value="more than 100000"  kmval="200000">
                       </datalist>
                 </div> 
-                
-                <div class="carinfo">
+               
+                <!-- <div class="carinfo">
                 <label class="font-weight-bold text-white mt-3">Issurance :</label>
-                <input class="mr-2 form-control" type="text" id="inssurance" list="Inssurance-datalist" placeholder="Enter Car Name">
+                <input class="mr-2 form-control" type="text" id="inssurance" list="Inssurance-datalist" placeholder="Inssurance is valid or not?">
                     <datalist id="Inssurance-datalist">
                       <option value="Yes">
                       <option value="No">
                     </datalist>
-                </div> 
+                </div>  -->
 
                 <div class="carinfo">
-                <label class="font-weight-bold text-white mt-3">No. Of Owners :</label>
-                <input class="mr-2 form-control" type="text" id="owner" list="owner-datalist" placeholder="Enter No. of owner">
-                    <datalist id="owner-datalist">
-                      <option value="First Owner">
-                      <option value="Second Owner">
-                      <option value="More than two owner">
-                    </datalist>
-                </div> -->
+                    <label class="font-weight-bold text-white mt-3">No. of owner :</label>
+                    <input class="mr-2 form-control" type="text" id="owner" list="owner-datalist" placeholder="No. of owner">
+                        <datalist id="owner-datalist">
+                          <option value="First Owner">
+                          <option value="Second Owner">
+                          <option value="More than two owner">
+                        </datalist>
+                </div>
+
                     <button type="button" class="btn btn-light mt-4 evaluate-btn">Check Value</button>
               </form>
             </div>

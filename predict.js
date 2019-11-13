@@ -4,6 +4,8 @@ let selectedModel;
 let seletedKmDriven;
 let inssurance=true;
 let noOfOwner;
+let seletedModelData;
+let seletedYear;
 window.addEventListener("load", init);
 
 
@@ -48,6 +50,7 @@ $("#companyname").change(function(){
         },
         success:function(data)
         {
+            seletedModelData=data;
            displaymodel(data);
         },
         error:function(err){
@@ -55,6 +58,7 @@ $("#companyname").change(function(){
         }
     })
 })
+
 function displaymodel(model)
 {
     console.log(model);
@@ -71,15 +75,68 @@ function displaymodel(model)
     })
 
 }
-
-$(".evaluate-btn").click(function(){
-    selectedModel=document.getElementById("modelname").value;
-    seletedKmDriven=document.getElementById("kmDriven").value;
-    inssurance=document.getElementById("inssurance").value;
-    noOfOwner=document.getElementById("owner").value;
-    console.log(seletedBrand)
-    console.log(selectedModel);
-    console.log(seletedKmDriven);
-    console.log(inssurance);
-    console.log(noOfOwner);
+$("#modelname").change(function(){
+    seletedModel=document.getElementById("modelname").value;
+    console.log(seletedModel);
+    console.log(seletedModelData);
+    let distinctYear=[...new Set(seletedModelData.map(v=>v.yearOfRegistration))]
+    console.log(distinctYear)
+    let yearOfRegList=document.getElementById("yearOfReg-datalist");
+    distinctYear.forEach(year=>{
+        if(year===""){
+        }else{
+            let optionYear=document.createElement("option");
+            optionYear.value=year;
+            yearOfRegList.appendChild(optionYear);
+        }
+    })
+    
 })
+$("#yearOfReg").change(function(){
+    seletedYear=document.getElementById("yearOfReg").value;
+    console.log(seletedYear);
+    $.ajax({
+        type:"POST",
+        dataType:"json",
+        url:"http://localhost:5000/car/year",
+        data:{
+            brand:seletedBrand,
+            model:seletedModel,
+            year:seletedYear
+        },
+        success:function(data){
+            console.log("success")
+        },
+        error:function(err){
+            console.log("error")
+        }
+    })
+    // console.log(seletedModelData);
+    // let distinctYear=[...new Set(seletedModelData.map(v=>v.yearOfRegistration))]
+    // console.log(distinctYear)
+    // let yearOfRegList=document.getElementById("yearOfReg-datalist");
+    // distinctYear.forEach(year=>{
+    //     if(year===""){
+    //     }else{
+    //         let optionYear=document.createElement("option");
+    //         optionYear.value=year;
+    //         yearOfRegList.appendChild(optionYear);
+    //     }
+    // })
+    
+})
+
+// $(".evaluate-btn").click(function(){
+//     selectedModel=document.getElementById("modelname").value;
+//     seletedKmDriven=document.getElementById("kmDriven").value;
+//     // inssurance=document.getElementById("inssurance").value;
+//     // noOfOwner=document.getElementById("owner").value;
+//     YOfReg=document.getElementById("yearOfReg").value;
+//     console.log(seletedBrand)
+//     console.log(selectedModel);
+//     console.log(seletedKmDriven);
+//     // console.log(inssurance);
+//     // console.log(noOfOwner);
+//     console.log(YOfReg);
+    
+// })

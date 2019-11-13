@@ -24,4 +24,20 @@ router.post('/modelname',(req,res)=>{
     })
 })
 
+router.post('/year',(req,res)=>{
+    console.log(req.body);
+    Usedcardetail.find({
+        brand:req.body.brand,
+        model:req.body.model,
+        yearOfRegistration:req.body.year
+    }).then(data=>{
+        if(data)
+        {
+            console.log(data);
+            res.json(data);
+        }
+           
+        // return res.status(404).json("Error");
+    })
+})
 module.exports=router;
