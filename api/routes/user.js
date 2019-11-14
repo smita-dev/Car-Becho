@@ -53,23 +53,21 @@ router.post('/login',(req,res)=>{
     const {email,password}=req.body;
     User.findOne({email:email})
              .then(user => {       
-                bcrypt.compare(password,user.password)
-                            .then(correct =>{
-                                console.log(correct)
-                                if(correct){
-                                    res.status("201").json({
+                 console.log(user.password);
+                 console.log(password)
+                bcrypt.compare(password,user.password).then(result =>{
+                            console.log(result)
+                             if(result){
+                                res.status("201").json({
                                         success : true
-                                    })
-                                }
-                                else{
+                                })
+                            }
+                            else{
                                     res.status(404).json({failed:'Invalid user credentials'});
-                                }
-                            })
-                            .catch(err => console.log("error generating token "+err));
+                            }
+                        })
+                        .catch(err => console.log("error generating token "+err));
              })
-
-            console.log("gdgf");
 })
-
 
 module.exports=router;
