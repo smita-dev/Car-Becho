@@ -110,7 +110,7 @@ $("#yearOfReg").change(function(){
         error:function(err){
             console.log("error")
         }
-    })
+})
     // console.log(seletedModelData);
     // let distinctYear=[...new Set(seletedModelData.map(v=>v.yearOfRegistration))]
     // console.log(distinctYear)
@@ -124,6 +124,18 @@ $("#yearOfReg").change(function(){
     //     }
     // })
     
+})
+$(".kmDriven").change(function(){
+    selectedModel=document.getElementById("modelname").value;
+    YearOfReg=document.getElementById("yearOfReg").value;
+    seletedKmDriven=document.getElementById("kmDriven").value;
+
+    console.log(seletedBrand)
+    console.log(selectedModel);
+    console.log(seletedKmDriven);
+    console.log(YearOfReg);
+
+
 })
 
 // $(".evaluate-btn").click(function(){
