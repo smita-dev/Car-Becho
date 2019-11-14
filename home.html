@@ -30,13 +30,13 @@
         </nav>
 
         <div class="implementation ">
-          <h1 style="color: white;"class="mt-5 ml-5">Price Estimater</h1>
-          <Div class="row m-4">
-            <div class="col-"></div>
+          <h1 style="color: white;"class="mt-3 ml-5 text-center">Price Estimater</h1>
+          <Div class="row m-2">
+            <div class="col-4"></div>
             <div class="col-4">
               <form action="/">
                 <div class="carinfo">
-                    <label class="font-weight-bold text-white mt-3">Company :</label>
+                    <label class="font-weight-bold text-center text-white mt-3">Company :</label>
                     <input class="mr-2 form-control" type="text" id="companyname" list="car-datalist" placeholder="Enter Company Name">
                     <datalist id="car-datalist">
                         
@@ -44,47 +44,36 @@
                 </div>
                 
                 <div class="carinfo">
-                  <label class="font-weight-bold text-white mt-3">Model Name :</label>
+                  <label class="font-weight-bold text-center text-white mt-3">Model Name :</label>
                   <input class="mr-2 form-control" type="text" id="modelname" list="model-datalist" placeholder="Enter Model Name">
                   <datalist id="model-datalist">
                      
                   </datalist>
                 </div>
+
                 <div class="carinfo">
-                    <label class="font-weight-bold text-white mt-3">Year Of Registration :</label>
-                    <input class="mr-2 form-control" type="text" id="yearOfReg" list="yearOfReg-datalist" placeholder="No. of owner">
+                    <label class="font-weight-bold text-center text-white mt-3">Year Of Registration :</label>
+                    <input class="mr-2 form-control" type="text" id="yearOfReg" list="yearOfReg-datalist" placeholder="Year Of Registration">
                         <datalist id="yearOfReg-datalist">
                           <!-- <option value="First Owner">
                           <option value="Second Owner">
                           <option value="More than two owner"> -->
                         </datalist>
                 </div>
-                <div class="carinfo">
-                    <label class="font-weight-bold text-white mt-3">Km Driven :</label>
-                    <input class="mr-2 form-control"  type="text" id="kmDriven" list="kmDriven-datalist" placeholder="Enter Km Driven">
-                        <datalist id="kmDriven-datalist">
-                          <option  value="less than 50000" kmval="50000">
-                          <option value="50000-100000"  kmval="100000">
-                          <option value="more than 100000"  kmval="200000">
-                      </datalist>
-                </div> 
-               
-                <!-- <div class="carinfo">
-                <label class="font-weight-bold text-white mt-3">Issurance :</label>
-                <input class="mr-2 form-control" type="text" id="inssurance" list="Inssurance-datalist" placeholder="Inssurance is valid or not?">
-                    <datalist id="Inssurance-datalist">
-                      <option value="Yes">
-                      <option value="No">
-                    </datalist>
-                </div>  -->
 
                 <div class="carinfo">
-                    <label class="font-weight-bold text-white mt-3">No. of owner :</label>
+                    <label class="font-weight-bold text-center text-white mt-3">Km Driven :</label>
+                    <input class="mr-2 form-control"  type="text" id="kmDriven" placeholder="Enter Km Driven">
+                </div> 
+
+                <div class="carinfo">
+                    <label class="font-weight-bold text-center text-white mt-3">No. of owner :</label>
                     <input class="mr-2 form-control" type="text" id="owner" list="owner-datalist" placeholder="No. of owner">
                         <datalist id="owner-datalist">
-                          <option value="First Owner">
-                          <option value="Second Owner">
-                          <option value="More than two owner">
+                          <option value="First">
+                          <option value="Second">
+                          <option value="Third">
+                          <option value="Above">
                         </datalist>
                 </div>
 
