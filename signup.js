@@ -2,7 +2,7 @@ let Fname;
 let Lname;
 let Email;
 let password;
-let rPassword;
+let passwordRepeat;
 
 $("#signupbtn").click(function(){
     console.log("sdjhf")
@@ -20,10 +20,10 @@ $("#signupbtn").click(function(){
     {
         alert("Please fill in all fields");
     }
-    // if(password.length<6)
-    // {
-    //     alert('Password should be at least 6 characters');
-    // }
+    if(password.length<6)
+    {
+        alert('Password should be at least 6 characters');
+    }
 
     $.ajax({
         type: "POST",
@@ -45,8 +45,8 @@ $("#signupbtn").click(function(){
 
 
 $("#loginbtn").click(function(){
-    email=$(".email").val();
-    password=$(".password").val();
+    email = $(".email").val();
+    password = $(".password").val();
     console.log(email)
     console.log(password)
     $.ajax({
