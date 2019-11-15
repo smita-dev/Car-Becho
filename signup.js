@@ -68,3 +68,9 @@ $("#loginbtn").click(function(){
         }
     })
 })
+$("#loginbtn").keypress(function(e){
+    console.log("pressed")
+    if(e.which == 13){//Enter key pressed
+        $('#loginbtn').click();//Trigger search button click event
+    }
+})
