@@ -92,25 +92,25 @@ $("#modelname").change(function(){
     })
     
 })
-$("#yearOfReg").change(function(){
-    seletedYear=document.getElementById("yearOfReg").value;
-    console.log(seletedYear);
-    $.ajax({
-        type:"POST",
-        dataType:"json",
-        url:"http://localhost:5000/car/year",
-        data:{
-            brand:seletedBrand,
-            model:seletedModel,
-            year:seletedYear
-        },
-        success:function(data){
-            console.log("success")
-        },
-        error:function(err){
-            console.log("error")
-        }
-})
+// $("#yearOfReg").change(function(){
+//     seletedYear=document.getElementById("yearOfReg").value;
+//     console.log(seletedYear);
+//         $.ajax({
+//         type:"POST",
+//         dataType:"json",
+//         url:"http://localhost:5000/car/year",
+//         data:{
+//             brand:seletedBrand,
+//             model:seletedModel,
+//             year:seletedYear
+//         },
+//         success:function(data){
+//             console.log("success")
+//         },
+//         error:function(err){
+//             console.log("error")
+//         }
+// })
     // console.log(seletedModelData);
     // let distinctYear=[...new Set(seletedModelData.map(v=>v.yearOfRegistration))]
     // console.log(distinctYear)
@@ -124,8 +124,8 @@ $("#yearOfReg").change(function(){
     //     }
     // })
     
-})
-$(".kmDriven").change(function(){
+// })
+$("#kmDriven").change(function(){
     selectedModel=document.getElementById("modelname").value;
     YearOfReg=document.getElementById("yearOfReg").value;
     seletedKmDriven=document.getElementById("kmDriven").value;
@@ -134,8 +134,23 @@ $(".kmDriven").change(function(){
     console.log(selectedModel);
     console.log(seletedKmDriven);
     console.log(YearOfReg);
-
-
+        $.ajax({
+            type:"POST",
+            dataType:"json",
+            url:"http://localhost:5000/car/year",
+            data:{
+                brand:seletedBrand,
+                model:seletedModel,
+                year:YearOfReg,
+                kmDriven:seletedKmDriven
+            },
+            success:function(data){
+                console.log("success")
+            },
+            error:function(err){
+                console.log("error")
+            }
+        })
 })
 
 // $(".evaluate-btn").click(function(){
