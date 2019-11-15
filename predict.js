@@ -8,10 +8,11 @@ let seletedModelData;
 let seletedYear;
 window.addEventListener("load", init);
 
-
+//this function is called loading document
 function init()
 {
     console.log("loaded")
+    //making ajax call for getting data from database
         $.ajax({
             type: "GET",
             dataType: "json",
@@ -38,6 +39,7 @@ function init()
         });
 }
 
+//this function is called after selecting value for company name
 $("#companyname").change(function(){
     seletedBrand=document.getElementById("companyname").value;
     console.log(seletedBrand);
@@ -51,7 +53,7 @@ $("#companyname").change(function(){
         success:function(data)
         {
             seletedModelData=data;
-           displaymodel(data);
+            displaymodel(data);
         },
         error:function(err){
             console.log(err);
@@ -92,39 +94,6 @@ $("#modelname").change(function(){
     })
     
 })
-// $("#yearOfReg").change(function(){
-//     seletedYear=document.getElementById("yearOfReg").value;
-//     console.log(seletedYear);
-//         $.ajax({
-//         type:"POST",
-//         dataType:"json",
-//         url:"http://localhost:5000/car/year",
-//         data:{
-//             brand:seletedBrand,
-//             model:seletedModel,
-//             year:seletedYear
-//         },
-//         success:function(data){
-//             console.log("success")
-//         },
-//         error:function(err){
-//             console.log("error")
-//         }
-// })
-    // console.log(seletedModelData);
-    // let distinctYear=[...new Set(seletedModelData.map(v=>v.yearOfRegistration))]
-    // console.log(distinctYear)
-    // let yearOfRegList=document.getElementById("yearOfReg-datalist");
-    // distinctYear.forEach(year=>{
-    //     if(year===""){
-    //     }else{
-    //         let optionYear=document.createElement("option");
-    //         optionYear.value=year;
-    //         yearOfRegList.appendChild(optionYear);
-    //     }
-    // })
-    
-// })
 $("#kmDriven").change(function(){
     selectedModel=document.getElementById("modelname").value;
     YearOfReg=document.getElementById("yearOfReg").value;
