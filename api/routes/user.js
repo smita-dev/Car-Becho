@@ -19,31 +19,27 @@ router.post('/signup',(req,res,next)=>{
                 email:req.body.email,
                 password:req.body.password
             });
-
-            console.log(user);
-            
+            console.log(user);         
             //hash password
             bcrypt.genSalt(10,(err,salt)=>
             bcrypt.hash(user.password, salt,(err,hash)=>{
-                if(err){
-                    throw err;
-                } 
+            if(err){
+                throw err;
+            } 
 
-                //set password to hashed
-                user.password=hash;
+            //set password to hashed
+            user.password=hash;
 
-                //save user
-                user.save()
-                .then(user=>{
-                    // res.status(200).send("success");
-                    // req.flash('success_msg','you are now registered');
-                    res.status("201").json({"success":"success"});
-                })
+            //save user
+            user.save()
+            .then(user=>{
+                res.status("201").json({"success":"success"});
+            })
                 .catch(err=>console.log(err));
             }))
            
         }
-        console.log("sdfsad");
+        //this function is called loading document
     })
 })
 
