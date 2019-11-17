@@ -20,34 +20,52 @@ router.post('/modelname',(req,res)=>{
     Usedcardetail.find({brand:req.body.brand}).
     then(model=>{
         if(model)
+        {
             res.json(model);     
+        }      
     })
 })
 
 router.post('/year',(req,res)=>{
-    console.log(req.body);
-
-    Usedcardetail.aggregate([{
-        $match: {
-            brand: req.body.brand,
-            // model: req.body.model,
-            yearOfRegistration: req.body.year,
-        }
-    },
-    {
-        $group: {
-            _id: null,
-            priceAvg: {
-                $avg: "$price"
+        console.log(req.body);
+        // Usedcardetail.aggregate([{
+        //     $match: {
+        //         brand: req.body.brand,
+        //         model: req.body.model,
+        //         yearOfRegistration: req.body.year,
+        //     }
+        // }], function (err, result) {
+        //     if (err) {
+        //         res.status(500).send("Error loading from database" + err);
+        //     } else {
+        //         res.status(200).send(result);
+        //     }
+        // });
+        
+        Usedcardetail.aggregate([{
+            $match: {
+                brand: req.body.brand,
+                model:req.body.model,
+                yearOfRegistration:req.body.year,
+                // kilometer: kms
+            }
+        },
+        {
+            $group: {
+                _id: null,
+                priceAvg: {
+                    $avg: "$price"
+                }
             }
         }
-    }
     ], function (err, result) {
         if (err) {
             res.status(500).send("Error loading from database" + err);
         } else {
+            console.log(result)
             res.status(200).send(result);
         }
     });
-    })
+
+})
 module.exports=router;

@@ -92,7 +92,16 @@ $("#modelname").change(function(){
             yearOfRegList.appendChild(optionYear);
         }
     })
-    
+    let distinctKm=[...new Set(seletedModelData.map(v=>v.kilometer))];
+    let kmOfRegList=document.getElementById("kmDriven-datalist");
+    distinctKm.forEach(km=>{
+        if(km===""){
+        }else{
+            let optionKm=document.createElement("option");
+            optionKm.value=km;
+            kmOfRegList.appendChild(optionKm);
+        }
+    })
 })
 $("#kmDriven").change(function(){
     selectedModel=document.getElementById("modelname").value;
@@ -100,9 +109,9 @@ $("#kmDriven").change(function(){
     seletedKmDriven=document.getElementById("kmDriven").value;
 
     console.log(seletedBrand)
-    console.log(selectedModel);
-    console.log(seletedKmDriven);
-    console.log(YearOfReg);
+    console.log(selectedModel)
+    console.log(seletedKmDriven)
+    console.log(YearOfReg)
         $.ajax({
             type:"POST",
             dataType:"json",
