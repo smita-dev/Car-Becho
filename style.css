@@ -2,13 +2,13 @@
     background-color: rgb(231, 227, 222);
 }
 .home-screen{
+    height: 100vh;
     background-image: url('car-wallpaper.jpg'); 
     background-repeat: no-repeat; 
     background-size: cover; 
     background-position: center center;
 }
 .screen{
-    height: 100vh;
     background-repeat: no-repeat; 
     background-size: cover; 
     background-position: center center;
@@ -20,6 +20,6 @@
 .logo{
     height: 50px;
 }
-.implementation{
-    opacity: 0.7;
+.price-estimater-screen{
+    background-color: white;
 }

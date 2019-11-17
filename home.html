@@ -27,42 +27,41 @@
                         </li>
                 </ul>
         </nav>
-        
 
         <div class="implementation ">
           <h1 style="color: white;"class="mt-3 ml-5 text-center">Price Estimater</h1>
-          <Div class="row m-2">
+          <Div class="row m-0">
             <div class="col-4"></div>
-            <div class="col-4">
-              <form action="/">
+            <div class="col-4 price-estimater-screen">
+              <form>
                 <div class="carinfo">
-                    <label class="font-weight-bold text-center text-white mt-3">Company :</label>
+                    <label class="font-weight-bold text-center mt-3">Company :</label>
                     <input class="mr-2 form-control" type="text" id="companyname" list="car-datalist" placeholder="Enter Company Name">
                     <datalist id="car-datalist" autocomplete=on>
                     </datalist>
                 </div>
                 
                 <div class="carinfo">
-                  <label class="font-weight-bold text-center text-white mt-3">Model Name :</label>
+                  <label class="font-weight-bold text-center mt-3">Model Name :</label>
                   <input class="mr-2 form-control" type="text" id="modelname" list="model-datalist" placeholder="Enter Model Name">
                   <datalist id="model-datalist" autocomplete=on>
                   </datalist>
                 </div>
 
                 <div class="carinfo">
-                    <label class="font-weight-bold text-center text-white mt-3">Year Of Registration :</label>
+                    <label class="font-weight-bold text-center mt-3">Year Of Registration :</label>
                     <input class="mr-2 form-control" type="text" id="yearOfReg" list="yearOfReg-datalist" placeholder="Year Of Registration">
                         <datalist id="yearOfReg-datalist" autocomplete=on>
                         </datalist>
                 </div>
 
                 <div class="carinfo">
-                    <label class="font-weight-bold text-center text-white mt-3">Km Driven :</label>
+                    <label class="font-weight-bold text-center mt-3">Km Driven :</label>
                     <input class="mr-2 form-control"  type="text" id="kmDriven" placeholder="Enter Km Driven">
                 </div> 
 
                 <div class="carinfo">
-                    <label class="font-weight-bold text-center text-white mt-3">No. of owner :</label>
+                    <label class="font-weight-bold text-center mt-3">No. of owner :</label>
                     <input class="mr-2 form-control" type="text" id="owner" list="owner-datalist" placeholder="No. of owner">
                         <datalist id="owner-datalist" autocomplete=on>
                           <option value="First">
@@ -72,7 +71,8 @@
                         </datalist>
                 </div>
 
-                    <button type="button" class="btn btn-light mt-4 evaluate-btn">Check Value</button>
+                <button type="button" class="btn btn-dark m-4 float-left">Estimate</button>
+
               </form>
             </div>
             <div class="col"></div>
