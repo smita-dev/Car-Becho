@@ -47,7 +47,7 @@ router.post('/year',(req,res)=>{
                 brand: req.body.brand,
                 model:req.body.model,
                 yearOfRegistration:req.body.year,
-                // kilometer: kms
+                kilometer: req.body.kmDriven
             }
         },
         {
@@ -58,14 +58,13 @@ router.post('/year',(req,res)=>{
                 }
             }
         }
-    ], function (err, result) {
-        if (err) {
-            res.status(500).send("Error loading from database" + err);
-        } else {
-            console.log(result)
-            res.status(200).send(result);
-        }
-    });
+    ]).then(price =>{
+        if(!price)
+             return res.status(404).json("Error");
+        res.json(price);
+        console.log(price);
+    })
+    .catch(err => console.log("error occured while finding shops list from  collection "+err));
 
 })
 module.exports=router;

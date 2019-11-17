@@ -103,7 +103,7 @@ $("#modelname").change(function(){
         }
     })
 })
-$("#kmDriven").change(function(){
+$(".predict-btn").click(function(){
     selectedModel=document.getElementById("modelname").value;
     YearOfReg=document.getElementById("yearOfReg").value;
     seletedKmDriven=document.getElementById("kmDriven").value;
@@ -123,6 +123,7 @@ $("#kmDriven").change(function(){
                 kmDriven:seletedKmDriven
             },
             success:function(data){
+                console.log(data);
                 console.log("success")
             },
             error:function(err){
