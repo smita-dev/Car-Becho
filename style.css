@@ -3,10 +3,10 @@
     /* opacity: 0.6; */
 .window{
     background-color: rgb(231, 227, 222);
-    opacity: 0.8;
+    /* opacity: 0.8; */
 }
-body{
-    height: 100vh;
+.home-screen{
+    /* height: 100vh; */
     background-image: url('car-wallpaper.jpg'); 
     background-repeat: no-repeat; 
     background-size: cover; 
@@ -14,7 +14,7 @@ body{
 }
 .screen{
     height: 100vh;
-    background-image: url('car1.jpg'); 
+    /* background-image: url('car1.jpg');  */
     background-repeat: no-repeat; 
     background-size: cover; 
     background-position: center center;
