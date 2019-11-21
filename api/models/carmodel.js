@@ -7,6 +7,7 @@ const usedcardetail= new mongoose.Schema({
     kilometer: {type: Number, default: 0},
     model:String,
     price: Number,
+    avg:Number,
 
 });
 usedcardetail.set('collection','usedcardetail')
