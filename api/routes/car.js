@@ -6,13 +6,13 @@ const bcrypt=require('bcryptjs');
 
 router.get('/carname',(req,res) => {
     Usedcardetail.find({}).select('brand')
-              .then(car =>{
-                  if(!car)
-                       return res.status(404).json("Error");
-                  res.json(car);
-                  console.log(car);
-              })
-              .catch(err => console.log("error occured while finding shops list from  collection "+err));
+        .then(car =>{
+            if(!car)
+                return res.status(404).json("Error");
+            res.json(car);
+           console.log(car);
+        })
+        .catch(err => console.log("error occured while finding shops list from  collection "+err));
 })
 
 router.post('/modelname',(req,res)=>{
@@ -41,7 +41,10 @@ router.post('/year',(req,res)=>{
         //         res.status(200).send(result);
         //     }
         // });
-        
+        db.locations.aggregate([
+            {$match:{"your find query"}},
+            {$project:{"your desired fields"}}
+          ])
         Usedcardetail.aggregate([{
             $match: {
                 brand: req.body.brand,
